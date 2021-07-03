@@ -6,7 +6,6 @@ This menu can be changed easily - to display data of any type with changes to st
 This react app has a brief overview of the pertinent React code given below:
 Firstly, the two states were set before the return was formatted.
 ```React
-
 function App() {
   const [menuItems, setMenuItems] = useState(items);
   const [categories, setCategories] = useState(allCategories);
@@ -25,7 +24,8 @@ function App() {
   );
 }
 ```
-<p></p>
+
+
 For the menu there is a list if items which need to be iterated over and returned with format and specification. 
 ```React
 const Menu = ({ items }) => {
@@ -50,7 +50,7 @@ const Menu = ({ items }) => {
   );
 };
 ```
-<p></p>
+
 
 Now that the list has been set up the buttons can be worked on. There should be on button for each type of category including an All button. To start setting up this functionality the filterItems function was created inside of App.jsx.
 ```React
@@ -59,13 +59,13 @@ Now that the list has been set up the buttons can be worked on. There should be 
     setMenuItems(newItems);
   };
   ```
-<p></p>
+
 
 To use filterItems inside of Categories.jsx it must be set as a prop within the <Category /> component.
 ```React
    <CategoriesfilterItems={filterItems} />
    ```
-   <p></p>
+
    
  Another stipulation is added to the filterItems() function to account for the 'all' category.
  ```React
@@ -78,19 +78,18 @@ To use filterItems inside of Categories.jsx it must be set as a prop within the 
     setMenuItems(newItems);
   };
   ```
-  <p></p>
-  
+
   Next, to filter the categories and ensure only unique ones are returned (to auto-update the menu data) all the array data items are mapped over. Set() is used to only return the unique values (to prevent repeat buttons). Finally, to get an 'all' button as well, it is included inside the new data array.
   ```React
   const allCategories = ["all", ...new Set(items.map((item) => item.category))];
   ```
   
- <p></p>
+
  Now another prop is set in the <Category /> component to make the above data available in Component.jsx.
  ```React
          <Categories categories={categories} filterItems={filterItems} />
  ```
- <p></p>
+
  
  Then the goal is to iterate over the categories inside of the data array and for each unique category to display a button. Then to add the text value into the list of filtered items. 
  ```React
@@ -113,7 +112,7 @@ To use filterItems inside of Categories.jsx it must be set as a prop within the 
   );
 };
 ```
-<p></p>
+
 Lastly render to the page.
 ```React
 ReactDOM.render(
@@ -125,9 +124,3 @@ ReactDOM.render(
 ```
 
 ***End walkthrough
- 
- 
- 
- 
-
-To use fi
